@@ -1,0 +1,15 @@
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Message</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let i of this.service.AllData,index as j">
+        <td>{{i.firstName}}</td>
+        <td>{{i.lastName}}</td>
+        <td>{{i.Message}}</td>
+        <td><button (click)="removeMessage(j)">Remove</button></td>
+    </tr>
+
+</table>

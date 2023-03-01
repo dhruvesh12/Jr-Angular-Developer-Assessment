@@ -1,0 +1,26 @@
+<div>
+    <form [formGroup]="postForm" (ngSubmit)="Submit()">
+        <label for="fname">First Name</label>
+        <input [ngClass]="{'is-invalid':submitted && postForm.controls['firstName'].errors}" formControlName="firstName"
+            type="text" id="fname" name="firstname" placeholder="Your name..">
+        <div *ngIf="submitted && postForm.controls['firstName'].errors" class="invalid-feedback">
+            <div *ngIf="postForm.controls['firstName'].errors">Name is required</div>
+        </div>
+
+        <label for="lname">Last Name</label>
+        <input [ngClass]="{'is-invalid':submitted && postForm.controls['lastName'].errors}" formControlName="lastName"
+            type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <div *ngIf="submitted && postForm.controls['lastName'].errors" class="invalid-feedback">
+            <div *ngIf="postForm.controls['lastName'].errors">Last Name is required</div>
+        </div>
+
+        <label for="Msg">Message</label>
+        <input [ngClass]="{'is-invalid':submitted && postForm.controls['Message'].errors}" formControlName="Message"
+            type="text" id="Msg" name="Message" placeholder="Your Message..">
+        <div *ngIf="submitted && postForm.controls['Message'].errors" class="invalid-feedback">
+            <div *ngIf="postForm.controls['Message'].errors">Message is required</div>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
